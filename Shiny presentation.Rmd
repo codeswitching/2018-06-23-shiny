@@ -23,7 +23,7 @@ options(htmltools.dir.version = FALSE)
 
 ### Lets non-R users explore your datasets and customize your visualizations 
 
-<img src="https://codeswitching.github.io/2018-06-23-shiny/baby_cuttlefish.jpg" width="500">
+<img src="https://codeswitching.github.io/2018-06-23-shiny/images/baby_cuttlefish.jpg" width="500">
 
 ---
 
@@ -33,7 +33,7 @@ options(htmltools.dir.version = FALSE)
 
 https://lsteely.shinyapps.io/streamflow_joyplots/
 
-<img src="https://codeswitching.github.io/2018-06-23-shiny/joyflow_screencap.PNG" width="600">"
+<img src="https://codeswitching.github.io/2018-06-23-shiny/images/joyflow_screencap.PNG" width="600">"
 
 ---
 class: center, middle
@@ -44,16 +44,20 @@ https://lsteely.shinyapps.io/Gate-Flow-Analysis/
 
 https://shiny.rstudio.com/gallery/
 
-<img src="https://codeswitching.github.io/2018-06-23-shiny/baby_cuttlefish2.jpg" width="400">
+<img src="https://codeswitching.github.io/2018-06-23-shiny/images/baby_cuttlefish2.jpg" width="400">
 
 ---
 class: center, middle
 
 # Get Started
 
-Create a new project:
+Load this presentation:
+`https://codeswitching.github.io/2018-06-23-shiny/Shiny_presentation.html#1`
 
-`New project... > New directory...> Shiny Web Application`
+Clone the Create a new project:
+
+`New project... > Version control...> Git > `
+`https://github.com/codeswitching/2018-06-23-shiny`
 
 Install the **shiny** package:
 
@@ -61,7 +65,7 @@ Install the **shiny** package:
 install.packages("shiny")
 ```
 
-<img src="https://codeswitching.github.io/2018-06-23-shiny/baby_nautilus.png" width="300">"
+<img src="https://codeswitching.github.io/2018-06-23-shiny/images/baby_nautilus.png" width="300">"
 
 ---
 
