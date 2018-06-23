@@ -186,6 +186,10 @@ class: center, middle, inverse
 
 ---
 
+# Publishing to shinyapps.io
+
+---
+
 class: center, middle
 
 # JoyFloy
