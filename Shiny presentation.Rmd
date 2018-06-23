@@ -74,7 +74,7 @@ install.packages("shiny")
 
 Here's a boring, uninteractive plot:
 
-<img src="https://codeswitching.github.io/2018-06-23-shiny/images/histogram.png" width="400">
+<img src="https://codeswitching.github.io/2018-06-23-shiny/images/histogram.PNG" width="400">
 
 Can we make this interactive?
 
