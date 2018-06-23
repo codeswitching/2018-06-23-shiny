@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Making interactive apps</title>
+    <meta charset="utf-8">
+    <meta name="author" content="RLadies::Los Angeles" />
+    <meta name="date" content="2018-06-23" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/rladies.css" rel="stylesheet" />
+    <link href="libs/remark-css/rladies-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Making interactive apps
+## with Shiny
+### RLadies::Los Angeles
+### 2018-06-23
+
+---
+
+
+
+
+# What is Shiny?
+
+### Adds interactivity to R output (text, plots, tables, maps)
+
+### Lets non-R users explore your datasets and customize your visualizations 
+
+&lt;img src="https://codeswitching.github.io/2018-06-23-shiny/baby_cuttlefish.jpg" width="500"&gt;
+
+---
+
+# An example Shiny app
+
+### JoyFlow
+
+https://lsteely.shinyapps.io/streamflow_joyplots/
+
+&lt;img src="https://codeswitching.github.io/2018-06-23-shiny/joyflow_screencap.PNG" width="600"&gt;"
+
+---
+class: center, middle
+
+# Other examples
+
+https://lsteely.shinyapps.io/Gate-Flow-Analysis/
+
+https://shiny.rstudio.com/gallery/
+
+&lt;img src="https://codeswitching.github.io/2018-06-23-shiny/baby_cuttlefish2.jpg" width="400"&gt;
+
+---
+class: center, middle
+
+# Get Started
+
+Create a new project:
+
+`New project... &gt; New directory...&gt; Shiny Web Application`
+
+Install the **shiny** package:
+
+
+```r
+install.packages("shiny")
+```
+
+&lt;img src="https://codeswitching.github.io/2018-06-23-shiny/baby_nautilus.png" width="300"&gt;"
+
+---
+
+# Example 1
+
+Here's a boring, uninteractive plot:
+
+
+```r
+library(shiny)
+
+# 1 Function that builds the html code for the user interface
+ui &lt;- fluidPage()
+
+# 2 Function that contains the back-end R code
+server &lt;- function(input, output) {}
+
+# 3 Builds the app and launches it!
+shinyApp(ui = ui, server = server)
+```
+
+---
+
+# The Shiny Template
+
+
+```r
+library(shiny)
+
+# 1 Function that builds the html code for the user interface
+ui &lt;- fluidPage()
+
+# 2 Function that contains the back-end R code
+server &lt;- function(input, output) {}
+
+# 3 Builds the app and launches it!
+shinyApp(ui = ui, server = server)
+```
+
+---
+
+
+
+```r
+library(shiny)
+
+# 1 Function that builds the html code for the user interface
+ui &lt;- fluidPage()
+
+# 2 Function that contains the back-end R code
+server &lt;- function(input, output) {}
+
+# 3 Builds the app and launches it!
+shinyApp(ui = ui, server = server)
+```
+---
+
+class: center, middle
+
+# JoyFloy
+
+Install some other packages we need for JoyFlow:
+
+
+```r
+install.packages("tidyverse")
+install.packages("plotly")
+install.packages("dataRetrieval")
+install.packages("lubridate")
+install.packages("ggjoy")
+install.packages("RColorBrewer")
+install.packages("shinythemes")
+install.packages("WaterML")
+```
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+  }
+});
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
