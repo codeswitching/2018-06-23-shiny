@@ -81,7 +81,7 @@ install.packages("shiny")
 
 Here's a boring, uninteractive plot:
 
-&lt;img src="https://codeswitching.github.io/2018-06-23-shiny/images/histogram.png" width="400"&gt;
+&lt;img src="https://codeswitching.github.io/2018-06-23-shiny/images/histogram.PNG" width="400"&gt;
 
 Can we make this interactive?
 
@@ -182,16 +182,19 @@ class: center, middle, inverse
 
 ---
 
-
 # Reactive Functions
 
 ### Go in the server section
 ### Require curly braces
 
-- renderPlot({ }) # update a plot
-- reactive({ }) # update a variable
-- observeEvent(input$button1, { some code })
-- eventReactive(input$button1, { some code })
+- `renderPlot({ }) # update a plot`
+- `reactive({ }) # update a variable`
+- `observeEvent( input$button1, { some code })`
+- `eventReactive( input$button1, { some code })`
+
+---
+
+# Publishing to shinyapps.io
 
 ---
 
