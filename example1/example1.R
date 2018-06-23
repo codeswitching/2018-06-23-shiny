@@ -1,3 +1,5 @@
+# Example 1
+
 x <- faithful$waiting
 
 numbins <- 22

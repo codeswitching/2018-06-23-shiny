@@ -39,7 +39,7 @@ class: center, middle, inverse, title-slide
 
 https://lsteely.shinyapps.io/streamflow_joyplots/
 
-&lt;img src="https://codeswitching.github.io/2018-06-23-shiny/images/joyflow_screencap.PNG" width="600"&gt;"
+&lt;img src="https://codeswitching.github.io/2018-06-23-shiny/images/joyflow_screencap.PNG" width="600"&gt;
 
 ---
 class: center, middle
@@ -66,11 +66,12 @@ Clone the GitHub repo to your machine:
 `New project... &gt; Version control...&gt; Git &gt; `
 ### `https://github.com/codeswitching/2018-06-23-shiny`
 
-Install the **shiny** package:
+Install the **shiny** and **DT** packages:
 
 
 ```r
 install.packages("shiny")
+install.packages("DT")
 ```
 
 ---
@@ -108,6 +109,33 @@ shinyApp(ui = ui, server = server)
 
 ---
 
+# The Shiny Template: more detail
+
+
+```r
+library(shiny
+        )
+# 1 Function that builds the html code for the user interface
+
+ui &lt;- fluidPage(
+  ___Input("input_name") # An input widget
+  plotOutput("output_name") # An output widget
+)
+
+# 2 Function that contains the back-end R code
+
+server &lt;- function(input, output) {
+  # Here is where we define how the inputs affect the outputs
+  output$output_name &lt;- renderPlot(plot_function(input$input_name))
+}
+
+# 3 Builds the app and launches it!
+
+shinyApp(ui = ui, server = server)
+```
+
+---
+
 # Example 1: Interactive Version
 
 
@@ -124,7 +152,7 @@ ui &lt;- fluidPage(
 server &lt;- function(input, output) {
    output$distPlot &lt;- renderPlot({
       x    &lt;- faithful[, 2] 
-      bins &lt;- seq(min(x), max(x), length.out = input$bins + 1)
+*      bins &lt;- seq(min(x), max(x), length.out = input$bins + 1)
       hist(x, breaks = bins, col = 'darkgray', border = 'white')
    })
 }
@@ -151,7 +179,7 @@ class: center, middle, inverse
 - selectInput()
 - fileInput()
 
-### `___Input("name", "Label", defaultValue = )`
+### `___Input("name", "Label", value = )`
 ### `___Input("name", "Label", defaultValue = , choices = c())`
 
 ### Access in server section using `input$name`
@@ -162,16 +190,18 @@ class: center, middle, inverse
 
 ### example2/app.R
 
+&lt;img src="https://codeswitching.github.io/2018-06-23-shiny/images/baby_octopus.jpg" width="400"&gt;
+
 ---
 
 # Output Widgets
 
 ### Go in the UI section
 
-- renderDataTable("name")
-- renderPlot()
-- renderPrint()
-- renderImage()
+- dataTableOutput("name")
+- plotOutput()
+- textOutput()
+- imageOutput()
 
 ### Access in server section using `output$name`
 
@@ -188,13 +218,26 @@ class: center, middle, inverse
 ### Require curly braces
 
 - `renderPlot({ }) # update a plot`
+- `renderDataTable({ }) # update a data table`
+- `renderPrint({ })`
 - `reactive({ }) # update a variable`
 - `observeEvent( input$button1, { some code })`
 - `eventReactive( input$button1, { some code })`
 
 ---
 
+# Example 3: A datatable
+
+### example3/app.R
+
+&lt;img src="https://codeswitching.github.io/2018-06-23-shiny/images/baby_cuttlefish3.jpg" width="400"&gt;
+
+---
+class: center, middle
+
 # Publishing to shinyapps.io
+
+&lt;img src="https://codeswitching.github.io/2018-06-23-shiny/images/baby_nautilus2.gif" width="400"&gt;
 
 ---
 
